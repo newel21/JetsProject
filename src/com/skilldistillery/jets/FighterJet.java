@@ -10,6 +10,6 @@ public class FighterJet extends Jets {
 	}
 
 	public void fight() {
-		System.out.println(this.getModel() + " FIGHTING ... RATAAATAAATAAA!!!! BOOOOOM!!!!");
+		System.out.println(this.getModel() + " is FIGHTING ... RATAAATAAATAAA!!!! BOOOOOM!!!!");
 	}
 }

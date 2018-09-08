@@ -1,5 +1,6 @@
 package com.skilldistillery.jets;
 
+
 public class AirField {
 
 	Jets[] jets = new Jets[50];
@@ -59,5 +60,29 @@ public class AirField {
 		}
 		System.out.println(model + " has the longest range.");
 	}
+	
+	void loadingCargoNow() {
+		for (Jets jet : jets) {
+			if (jet != null) {
+				if (jet instanceof CargoPlane) {
+					
+					((CargoPlane) jet).loadCargo();
+				}
+			}	
+			
 
+		}
+	}
+	void dogFight() {
+		for (Jets jet : jets) {
+			if (jet != null) {
+				if (jet instanceof FighterJet) {
+					
+					((FighterJet) jet).fight();
+				}
+			}	
+			
+			
+		}
+	}
 }

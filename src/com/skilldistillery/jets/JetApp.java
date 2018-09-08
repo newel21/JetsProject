@@ -8,7 +8,6 @@ public class JetApp {
 
 		JetApp menu = new JetApp();
 		menu.displayUserMenu();
-	
 
 	}
 
@@ -28,8 +27,7 @@ public class JetApp {
 		System.out.println("8. Quit");
 		System.out.println();
 
-		int input = sc.nextInt();
-		
+		int input = sc.nextInt();	
 							
 		AirField fleet = new AirField();
 				
@@ -52,16 +50,18 @@ public class JetApp {
 				fleet.longestRange();
 				break;
 			case 5:
-				System.out.println("You chose Option 5");
+				System.out.println();
+				fleet.loadingCargoNow();
 				break;
 			case 6:
-				System.out.println("You chose Option 6");
+				System.out.println();
+				fleet.dogFight();
 				break;
 			case 7:
 				System.out.println("You chose Option 7");
 				break;
 			case 8:
-				System.out.println("QUIT!");
+				System.out.println("GoodBye!");
 				break;
 			default:
 				System.out.println("Invalid Option!");

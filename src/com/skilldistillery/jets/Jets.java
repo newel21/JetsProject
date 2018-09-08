@@ -47,19 +47,12 @@ public abstract class Jets {
 		return "MODEL: " + model + ",   SPEED: " + speed + ",   RANGE: " + range + ",   PRICE: " + price;
 	}
 	
-	//fly method
+	//fly method that also calculates the time left that Jets can fly till they run out of fuel
 	public void fly() {
 		double timeLeft = range/speed;
 		double hours = Math.round(timeLeft * 100.0) / 100.0;
 		System.out.println(getModel() + " is flying... and has " + hours + " hours left until it runs out of fuel.");
 	}
 	
-	public void fast() {
-		System.out.println(getModel() + " is the fastest");
-	}
-	
-	public void longest() {
-		System.out.println(getModel() + " has the longest range");
-	}
 	
 }
