@@ -31,29 +31,33 @@ public class AirField {
 	}
 
 	void listFastest() {
+	
 		double speed = 0.0; 
+		String model = "";
 		for (Jets jet : jets) {
 			if (jet != null) {
 				if(jet.getSpeed() > speed) {
 					speed = jet.getSpeed();
-					jet.fast();
+					model = jet.getModel();
 				}
 			}
 
 		}
+		System.out.println(model + " is the fastest Jet.");
 	}
 	
 	void longestRange() {
-		double range = 0.0; 
+		int range = 0; 
+		String model = "";
 		for (Jets jet : jets) {
 			if (jet != null) {
 				if(jet.getRange() > range) {
 					range = jet.getRange();
-					jet.longest();
+					model = jet.getModel();				
 				}
-			}
-			
+			}		
 		}
+		System.out.println(model + " has the longest range.");
 	}
 
 }

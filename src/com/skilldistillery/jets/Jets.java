@@ -47,6 +47,7 @@ public abstract class Jets {
 		return "MODEL: " + model + ",   SPEED: " + speed + ",   RANGE: " + range + ",   PRICE: " + price;
 	}
 	
+	//fly method
 	public void fly() {
 		double timeLeft = range/speed;
 		double hours = Math.round(timeLeft * 100.0) / 100.0;
