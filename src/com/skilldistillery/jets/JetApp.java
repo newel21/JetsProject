@@ -13,8 +13,9 @@ public class JetApp {
 
 	private void displayUserMenu() {
 
-		
+		// prompts user to select from the list
 		Scanner sc = new Scanner(System.in);
+		System.out.println();
 		System.out.println("Choose from the menu: ");
 		System.out.println();
 		System.out.println("1. List Fleet");
@@ -27,49 +28,52 @@ public class JetApp {
 		System.out.println("8. Quit");
 		System.out.println();
 
-		int input = sc.nextInt();	
-							
+		int input = sc.nextInt();
+
+		// create an object then call methods inside the object depending on the case
 		AirField fleet = new AirField();
-				
-			switch (input) {
-			case 1:
-				System.out.println("Here are the list of Jets in the Airfield: ");
-				System.out.println();
-				fleet.listJets();			
-				break;
-			case 2:
-				System.out.println();
-				fleet.flyAll();				
-				break;
-			case 3:
-				System.out.println();
-				fleet.listFastest();
-				break;
-			case 4:
-				System.out.println();
-				fleet.longestRange();
-				break;
-			case 5:
-				System.out.println();
-				fleet.loadingCargoNow();
-				break;
-			case 6:
-				System.out.println();
-				fleet.dogFight();
-				break;
-			case 7:
-				System.out.println("You chose Option 7");
-				break;
-			case 8:
-				System.out.println("GoodBye!");
-				break;
-			default:
-				System.out.println("Invalid Option!");
-			}
+		// Jets newJet = new Jets();
 
-			sc.close();
-		
+		switch (input) {
+		case 1:
+			System.out.println("Here are the list of Jets in the Airfield: ");
+			System.out.println();
+			fleet.listJets();
+			break;
+		case 2:
+			System.out.println();
+			fleet.flyAll();
+			break;
+		case 3:
+			System.out.println();
+			fleet.listFastest();
+			break;
+		case 4:
+			System.out.println();
+			fleet.longestRange();
+			break;
+		case 5:
+			System.out.println();
+			fleet.loadingCargoNow();
+			break;
+		case 6:
+			System.out.println();
+			fleet.dogFight();
+			break;
+		case 7:
+			System.out.println();
+			fleet.addJets();
+			//fleet.listJets();
+			break;
+		case 8:
+			System.out.println("GoodBye!");
+			break;
+		default:
+			System.out.println("Invalid Option!");
+		}
+
+		sc.close();
+
 	}
-
 
 }

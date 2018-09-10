@@ -1,9 +1,10 @@
 package com.skilldistillery.jets;
 
+import java.util.Scanner;
 
 public class AirField {
 
-	Jets[] jets = new Jets[50];
+	Jets[] jets = new Jets[100];
 
 	public AirField() {
 
@@ -15,6 +16,15 @@ public class AirField {
 
 	}
 
+	public Jets[] getJets() {
+		return jets;
+	}
+	
+	public void setJets(Jets[] jets) {
+		this.jets = jets;
+	}
+	
+	//prints out or list items in the array
 	void listJets() {
 		for (Jets jet : jets) {
 			if (jet != null) {
@@ -23,6 +33,7 @@ public class AirField {
 		}
 	}
 
+	// calls fly() method from Jets class
 	void flyAll() {
 		for (Jets jet : jets) {
 			if (jet != null) {
@@ -31,8 +42,8 @@ public class AirField {
 		}
 	}
 
+	// iterate through the loop to find the Jet with highest speed 
 	void listFastest() {
-	
 		double speed = 0.0; 
 		String model = "";
 		for (Jets jet : jets) {
@@ -46,7 +57,7 @@ public class AirField {
 		}
 		System.out.println(model + " is the fastest Jet.");
 	}
-	
+	// iterate through the loop to find the Jet with the longest range 
 	void longestRange() {
 		int range = 0; 
 		String model = "";
@@ -61,28 +72,60 @@ public class AirField {
 		System.out.println(model + " has the longest range.");
 	}
 	
+	// iterate through the loop and find Jet(s) that implements CargoCarrier
 	void loadingCargoNow() {
 		for (Jets jet : jets) {
 			if (jet != null) {
-				if (jet instanceof CargoPlane) {
-					
+				if (jet instanceof CargoCarrier) {				
 					((CargoPlane) jet).loadCargo();
 				}
 			}	
-			
-
 		}
 	}
+	
+	// iterate through the loop and find Jet(s) that implements CombatReady
 	void dogFight() {
 		for (Jets jet : jets) {
 			if (jet != null) {
-				if (jet instanceof FighterJet) {
-					
+				if (jet instanceof CombatReady) {					
 					((FighterJet) jet).fight();
 				}
-			}	
-			
-			
+			}					
 		}
 	}
+	
+	public void addJets() {
+		
+		Scanner add = new Scanner(System.in);
+		
+		System.out.println("Enter Model: ");
+		String addModel = add.nextLine();
+		
+		System.out.println("Enter Speed: ");
+		double addSpeed = add.nextDouble();
+		
+		System.out.println("Enter Range: ");
+		int addRange = add.nextInt();
+		
+		System.out.println("Enter Price: ");
+		long addPrice = add.nextLong();
+	
+		JetImpl newJet = new JetImpl(addModel, addSpeed, addRange, addPrice);
+		
+		newJet.displayNewJet();
+	    
+		for (Jets jet : jets) {
+			if (jet != null) {
+				System.out.println(jet);
+				
+			}
+			
+		}
+				
+		add.close();
+		
+	}
+
+
+	
 }

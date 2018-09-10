@@ -42,6 +42,7 @@ public abstract class Jets {
 		this.price = price;
 	}
 
+	// prints out the array in this format
 	@Override
 	public String toString() {
 		return "MODEL: " + model + ",   SPEED: " + speed + ",   RANGE: " + range + ",   PRICE: " + price;
@@ -52,6 +53,11 @@ public abstract class Jets {
 		double timeLeft = range/speed;
 		double hours = Math.round(timeLeft * 100.0) / 100.0;
 		System.out.println(getModel() + " is flying... and has " + hours + " hours left until it runs out of fuel.");
+	}
+	
+	public void displayNewJet() {
+		String jetData = toString();
+		System.out.println(jetData);
 	}
 	
 	

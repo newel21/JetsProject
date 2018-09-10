@@ -1,6 +1,6 @@
 package com.skilldistillery.jets;
 
-public class FighterJet extends Jets {
+public class FighterJet extends Jets implements CombatReady {
 
 	public FighterJet() {
 	}
