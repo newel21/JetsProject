@@ -94,34 +94,35 @@ public class AirField {
 		}
 	}
 	
+	// prompts user to enter Jet info in order to add newJet in the Array of Jets
 	public void addJets() {
 		
 		Scanner add = new Scanner(System.in);
 		
-		System.out.println("Enter Model: ");
+		System.out.print("Enter Model: ");
 		String addModel = add.nextLine();
 		
-		System.out.println("Enter Speed: ");
+		System.out.print("Enter Speed: ");
 		double addSpeed = add.nextDouble();
 		
-		System.out.println("Enter Range: ");
+		System.out.print("Enter Range: ");
 		int addRange = add.nextInt();
 		
-		System.out.println("Enter Price: ");
+		System.out.print("Enter Price: ");
 		long addPrice = add.nextLong();
 	
 		JetImpl newJet = new JetImpl(addModel, addSpeed, addRange, addPrice);
 		
-		newJet.displayNewJet();
+		//newJet.displayNewJet();;
 	    
-		for (Jets jet : jets) {
-			if (jet != null) {
-				System.out.println(jet);
-				
+		for (int i=0; i<jets.length; i++) {
+			if (jets[i] == null) {
+				jets[i] = newJet;
+				break;
 			}
-			
+			//System.out.println(i);
 		}
-				
+					
 		add.close();
 		
 	}

@@ -12,7 +12,7 @@ public class JetApp {
 	}
 
 	private void displayUserMenu() {
-
+		
 		// prompts user to select from the list
 		Scanner sc = new Scanner(System.in);
 		System.out.println();
@@ -35,42 +35,46 @@ public class JetApp {
 		// Jets newJet = new Jets();
 
 		switch (input) {
-		case 1:
-			System.out.println("Here are the list of Jets in the Airfield: ");
-			System.out.println();
-			fleet.listJets();
-			break;
-		case 2:
-			System.out.println();
-			fleet.flyAll();
-			break;
-		case 3:
-			System.out.println();
-			fleet.listFastest();
-			break;
-		case 4:
-			System.out.println();
-			fleet.longestRange();
-			break;
-		case 5:
-			System.out.println();
-			fleet.loadingCargoNow();
-			break;
-		case 6:
-			System.out.println();
-			fleet.dogFight();
-			break;
-		case 7:
-			System.out.println();
-			fleet.addJets();
-			//fleet.listJets();
-			break;
-		case 8:
-			System.out.println("GoodBye!");
-			break;
-		default:
-			System.out.println("Invalid Option!");
-		}
+			case 1:
+				System.out.println("Here are the list of Jets in the Airfield: ");
+				System.out.println();
+				fleet.listJets();
+				break;
+			case 2:
+				System.out.println();
+				fleet.flyAll();
+				break;
+			case 3:
+				System.out.println();
+				fleet.listFastest();
+				break;
+			case 4:
+				System.out.println();
+				fleet.longestRange();
+				break;
+			case 5:
+				System.out.println();
+				fleet.loadingCargoNow();
+				break;
+			case 6:
+				System.out.println();
+				fleet.dogFight();
+				break;
+			case 7:
+				System.out.println();
+				fleet.addJets();
+				System.out.println();
+				fleet.listJets();	
+				break;			
+			case 8:
+				System.out.println("GoodBye!");
+				System.exit(0);
+				//break;
+			default:
+				System.out.println("Invalid Option!");
+			}
+		
+		
 
 		sc.close();
 

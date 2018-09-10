@@ -9,4 +9,5 @@ public class JetImpl extends Jets {
 		super(model, speed, range, price);
 	}
 
+	
 }
