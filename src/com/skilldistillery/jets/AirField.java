@@ -123,7 +123,7 @@ public class AirField {
 			//System.out.println(i);
 		}
 					
-		add.close();
+		
 		
 	}
 

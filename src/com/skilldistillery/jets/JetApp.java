@@ -5,15 +5,19 @@ import java.util.Scanner;
 public class JetApp {
 
 	public static void main(String[] args) {
-
+	
 		JetApp menu = new JetApp();
 		menu.displayUserMenu();
-
+		
 	}
 
 	private void displayUserMenu() {
 		
+		// create an object then call methods inside the object depending on the case
+		AirField fleet = new AirField();
+		
 		// prompts user to select from the list
+		while (true) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println();
 		System.out.println("Choose from the menu: ");
@@ -30,8 +34,6 @@ public class JetApp {
 
 		int input = sc.nextInt();
 
-		// create an object then call methods inside the object depending on the case
-		AirField fleet = new AirField();
 		// Jets newJet = new Jets();
 
 		switch (input) {
@@ -62,9 +64,7 @@ public class JetApp {
 				break;
 			case 7:
 				System.out.println();
-				fleet.addJets();
-				System.out.println();
-				fleet.listJets();	
+				fleet.addJets();				
 				break;			
 			case 8:
 				System.out.println("GoodBye!");
@@ -73,10 +73,10 @@ public class JetApp {
 			default:
 				System.out.println("Invalid Option!");
 			}
-		
-		
+		}
+			
 
-		sc.close();
+		//sc.close();
 
 	}
 
